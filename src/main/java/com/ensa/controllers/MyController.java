@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.ensa.dao.AfficheDao;
 import com.ensa.dao.FilmAfficheDao;
@@ -17,9 +18,10 @@ import com.ensa.entities.Affiche;
 import com.ensa.entities.Film;
 
 //@CrossOrigin(origins = "http://192.168.1.42:4200", maxAge = 3600) 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", maxAge = 3600,
+methods= {RequestMethod.OPTIONS, RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RestController
-@RequestMapping(value="/api")
+@RequestMapping(value="/api-ws")
 public class MyController {
 
 	@Autowired
