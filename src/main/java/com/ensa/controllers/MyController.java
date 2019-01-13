@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,19 +39,24 @@ public class MyController {
 		return "YES! Hello CY15 :)";
 	}
 	
-	@GetMapping("/getFilms")
+	@GetMapping("/films")
 	public List<Film> getFilms() {		
 		return filmDao.findAll();
 	}
 	
-	@GetMapping("/getAffiches")
+	@GetMapping("/affiches")
 	public List<Affiche> getAffiches() {		
 		return afficheDao.findAll();
 	}
 	
-	@GetMapping("/getAffiche")
-	public Affiche getAffiche() {		
-		return afficheDao.findById(1L).orElse(null);
+	@GetMapping("/affiche/{id}")
+	public Affiche getAffiche(@PathVariable long id) {		
+		return afficheDao.findById(id).orElse(null);
+	}
+	
+	@GetMapping("/film/{id}")
+	public Affiche getFilm(@PathVariable long id) {		
+		return afficheDao.findById(id).orElse(null);
 	}
 	
 }

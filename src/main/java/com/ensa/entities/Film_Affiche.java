@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Film_Affiche {
 
@@ -18,6 +20,7 @@ public class Film_Affiche {
 	private Double prix;
 	private int nbrPlaces;
 
+	@JsonManagedReference
 	@OneToMany (mappedBy="filmAffiche")
 	private Set<Reservation> reservations =new HashSet<>();
 	

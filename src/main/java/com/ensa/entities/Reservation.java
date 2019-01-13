@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class Reservation {
 
@@ -16,6 +18,7 @@ public class Reservation {
 	private Long id;
 	private String nomClient,prenomClient,numCarte;
 	
+	@JsonBackReference
 	@ManyToOne
 	//@JoinColumn(name="film_Affiche_Code")
 	@JoinColumns({

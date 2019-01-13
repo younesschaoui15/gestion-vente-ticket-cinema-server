@@ -10,6 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Affiche {
 
@@ -18,6 +21,7 @@ public class Affiche {
 	private Long id;
 	private Date date;
 	
+	@JsonManagedReference
 	@OneToMany (mappedBy="pk.affiche")
 	private List<Film_Affiche> filmAffiches = new ArrayList<>();
 	

@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Film {
 
@@ -18,6 +20,7 @@ public class Film {
 	
 	private String titre,genre,acteur,realisateur;
 	
+	@JsonManagedReference
 	@OneToMany (mappedBy="pk.film")
 	private List<Film_Affiche> filmAffiches =new ArrayList<>();
 	

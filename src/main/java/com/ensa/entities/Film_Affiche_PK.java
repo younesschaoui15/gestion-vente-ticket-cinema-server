@@ -7,15 +7,19 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Embeddable
 public class Film_Affiche_PK implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
+	@JsonBackReference
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="film")
 	private Film film;
 	
+	@JsonBackReference
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="affiche")
 	private Affiche affiche;
