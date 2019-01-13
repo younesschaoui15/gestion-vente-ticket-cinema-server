@@ -15,12 +15,12 @@ public class Film_Affiche_PK implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@JsonBackReference
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="film")
 	private Film film;
 	
 	@JsonBackReference
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="affiche")
 	private Affiche affiche;
 
