@@ -51,12 +51,12 @@ public class MyController {
 		return afficheDao.findAll();
 	}
 	
-	@GetMapping("/affiche/{id}")
+	@GetMapping("/affiches/{id}")
 	public Affiche getAffiche(@PathVariable long id) {		
 		return afficheDao.findById(id).orElse(null);
 	}
 	
-	@GetMapping("/film/{id}")
+	@GetMapping("/films/{id}")
 	public Affiche getFilm(@PathVariable long id) {		
 		return afficheDao.findById(id).orElse(null);
 	}
