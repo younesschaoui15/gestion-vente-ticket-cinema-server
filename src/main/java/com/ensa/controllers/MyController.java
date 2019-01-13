@@ -18,7 +18,7 @@ import com.ensa.entities.Film;
 //@CrossOrigin(origins = "http://192.168.1.42:4200", maxAge = 3600) 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping({"/api"})
+@RequestMapping(value="/api")
 public class MyController {
 
 	@Autowired

@@ -9,6 +9,7 @@
 		<version>2.0.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.ensa.tt</groupId>
 	<artifactId>CinemaProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
