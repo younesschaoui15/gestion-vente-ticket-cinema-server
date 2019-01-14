@@ -17,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
+//@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Film {
 
 	@Id
@@ -27,7 +27,7 @@ public class Film {
 	private String titre,genre,acteur,realisateur;
 	
 	
-	//@JsonManagedReference
+	@JsonManagedReference
 	@OneToMany (mappedBy="pk.film")
 	private Set<Film_Affiche> filmAffiches =new HashSet<Film_Affiche>();
 	

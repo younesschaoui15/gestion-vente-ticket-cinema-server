@@ -20,7 +20,7 @@ public class Film_Affiche {
 	private Double prix;
 	private int nbrPlaces;
 
-	@JsonManagedReference
+	//@JsonManagedReference
 	@OneToMany (mappedBy="filmAffiche")
 	private Set<Reservation> reservations =new HashSet<>();
 	

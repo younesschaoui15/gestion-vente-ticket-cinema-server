@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerator;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
-@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
+//@JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
 public class Affiche {
 
 	@Id
@@ -29,7 +29,7 @@ public class Affiche {
 	private Date date;
 	
 	
-	//@JsonManagedReference
+	@JsonManagedReference
 	@OneToMany (mappedBy="pk.affiche")
 	private Set<Film_Affiche> filmAffiches = new HashSet<Film_Affiche>();
 	
