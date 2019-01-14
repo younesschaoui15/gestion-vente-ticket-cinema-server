@@ -130,8 +130,8 @@ public class MyController {
 		return false ;
 	}
 	
-	@PostMapping("/reserverPlace")
-	public boolean reserverPlace(@RequestParam long idf, @RequestParam long ida)
+	@GetMapping("/reserverPlace/{idf}/{ida}")
+	public boolean reserverPlace(@PathVariable long idf, @PathVariable long ida)
 	{
 		Film f = filmDao.findById(idf).orElse(null);
 		Affiche a = afficheDao.findById(ida).orElse(null);
@@ -148,4 +148,23 @@ public class MyController {
 		  }
 		return false ;
 	}
+	
+//	@PostMapping("/reserverPlace")
+//	public boolean reserverPlace(@RequestParam long idf, @RequestParam long ida)
+//	{
+//		Film f = filmDao.findById(idf).orElse(null);
+//		Affiche a = afficheDao.findById(ida).orElse(null);
+//		Film_Affiche fa = filmAfficheDao.findByPk(new Film_Affiche_PK(f,a));
+//		if(fa != null && fa.getNbrPlaces()>0) 
+//		{
+//			  Reservation reservation = new Reservation();
+//			  fa.setNbrPlaces(fa.getNbrPlaces()-1)  ;
+//			  reservation.setFilmAffiche(fa);
+//			  fa.getReservations().add(reservation);
+//			  reservationDao.save(reservation);
+//			  filmAfficheDao.save(fa);
+//			  return true;
+//		  }
+//		return false ;
+//	}
 }
