@@ -57,8 +57,8 @@ public class MyController {
 	}
 	
 	@GetMapping("/films/{id}")
-	public Affiche getFilm(@PathVariable long id) {		
-		return afficheDao.findById(id).orElse(null);
+	public Film getFilm(@PathVariable long id) {		
+		return filmDao.findById(id).orElse(null);
 	}
 	
 }
