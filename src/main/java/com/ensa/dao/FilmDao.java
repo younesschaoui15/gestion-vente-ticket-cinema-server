@@ -16,4 +16,5 @@ public interface FilmDao extends JpaRepository<Film, Long>{
 
 		List<Film> findAllByFilmAffichesPkAffiche(Affiche a);
 		Film findByFilmAffiches(Film_Affiche fa);
+		List<Film> findAllByTitre(String titre);
 }
