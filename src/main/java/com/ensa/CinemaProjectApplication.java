@@ -19,6 +19,7 @@ import com.ensa.dao.ReservationDao;
 import com.ensa.entities.Affiche;
 import com.ensa.entities.Film;
 import com.ensa.entities.Film_Affiche;
+import com.ensa.entities.Film_Affiche_PK;
 import com.ensa.entities.Reservation;
 
 @Transactional
@@ -44,6 +45,12 @@ public class CinemaProjectApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+	
+//		Film f = filmDao.findById(1L).orElse(null);
+//		Affiche a = afficheDao.findById(1L).orElse(null);
+//        Film_Affiche fa = filmAfficheDao.findByPk(new Film_Affiche_PK(f, a));
+//        System.err.println(fa.getSalle());
 		
 //		System.err.println("ssssssssssss");
 //		Affiche a1 = afficheDao.getOne(1L);

@@ -63,7 +63,7 @@ public class MyController {
 		return filmDao.findById(id).orElse(null);
 	}
 	
-	@GetMapping("/filmAffiche/{idf}/{ifa}")
+	@GetMapping("/filmAffiche/{idf}/{ida}")
 	public Film_Affiche getFilmAffiche(@PathVariable long idf, @PathVariable long ida) 
 	{
 		Film f = filmDao.findById(idf).orElse(null);
