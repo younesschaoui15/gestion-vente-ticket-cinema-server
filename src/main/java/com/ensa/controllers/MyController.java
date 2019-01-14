@@ -16,6 +16,8 @@ import com.ensa.dao.FilmDao;
 import com.ensa.dao.ReservationDao;
 import com.ensa.entities.Affiche;
 import com.ensa.entities.Film;
+import com.ensa.entities.Film_Affiche;
+import com.ensa.entities.Film_Affiche_PK;
 
 //@CrossOrigin(origins = "http://192.168.1.42:4200", maxAge = 3600) 
 @CrossOrigin(origins = "*", maxAge = 3600,
@@ -61,4 +63,11 @@ public class MyController {
 		return filmDao.findById(id).orElse(null);
 	}
 	
+	@GetMapping("/filmAffiche/{idf}/{ifa}")
+	public Film_Affiche getFilmAffiche(@PathVariable long idf, @PathVariable long ida) 
+	{
+		Film f = filmDao.findById(idf).orElse(null);
+		Affiche a = afficheDao.findById(ida).orElse(null);
+		return filmAfficheDao.findByPk(new Film_Affiche_PK(f, a));
+	}
 }

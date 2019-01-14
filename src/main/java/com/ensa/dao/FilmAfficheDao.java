@@ -14,6 +14,7 @@ import com.ensa.entities.Reservation;
 @Repository
 public interface FilmAfficheDao extends JpaRepository<Film_Affiche, Film_Affiche_PK>{
 
+	Film_Affiche findByPk(Film_Affiche_PK affiche_PK);
 	List<Film> findPkFilmByPkAffiche(Affiche a);
 	List<Film_Affiche> findAllByPkAffiche(Affiche a);
 	List<Film_Affiche> findAllByPkFilm(Film f);
