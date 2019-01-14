@@ -45,11 +45,12 @@ public class CinemaProjectApplication implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		
-		System.err.println("ssssssssssss");
-		Affiche a1 = afficheDao.getOne(1L);
-		for(Film_Affiche fa : a1.getFilmAffiche()) {
-			System.err.println(fa.getPk().getFilm().getActeur());
-		}
+//		System.err.println("ssssssssssss");
+//		Affiche a1 = afficheDao.getOne(1L);
+//		for(Film_Affiche fa : a1.getFilmAffiche()) {
+//			Film f1 = filmDao.findByFilmAffiches(fa);
+//			System.err.println(f1.getTitre());
+//		}
 		
 		
 //		Film f1 = filmDao.save(new Film("The Vow", "Drama", "Chris Towner", "Alex Brand"));
